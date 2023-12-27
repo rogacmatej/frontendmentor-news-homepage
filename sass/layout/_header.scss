@@ -1,0 +1,125 @@
+@use '../abstracts' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 3.2rem;
+
+  .logo {
+    width: 4.4977rem;
+    height: 2.8rem;
+  }
+
+  .navigation {
+    &__link {
+      text-decoration: none;
+
+      &:link,
+      &:visited {
+        color: hsl(var(--clr-neutral-600));
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: hsl(var(--clr-primary-soft-red));
+      }
+    }
+
+    &__toggler {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+
+    &__content {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      right: 0;
+      width: 25.6rem;
+      height: 100%;
+      background-color: #fff;
+      padding: 2.73rem 2.4rem;
+      transition: translate 0.5s ease-in-out;
+
+      .navigation__toggler {
+        align-self: self-end;
+        width: 3.0406rem;
+        height: 3.0406rem;
+        margin-bottom: 8.63rem;
+      }
+    }
+
+    &__overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      background-color: hsla(var(--clr-neutral-900), 0.5);
+      transition: translate 0.5s ease-in-out;
+    }
+  }
+}
+
+.header {
+  #navigation__open[aria-expanded='true'] {
+    ~ .navigation__content,
+    ~ .navigation__overlay {
+      translate: 0;
+    }
+  }
+  #navigation__open[aria-expanded='false'] {
+    ~ .navigation__content,
+    ~ .navigation__overlay {
+      translate: 100vw 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .header {
+    padding-block: 8rem 5.5rem;
+
+    .logo {
+      width: 6.4092rem;
+      height: 3.99rem;
+    }
+
+    .navigation {
+      &__content {
+        position: static;
+        width: 100%;
+        padding: 0;
+      }
+
+      &__items {
+        flex-direction: row;
+        gap: 4rem;
+      }
+
+      &__toggler {
+        display: none;
+      }
+    }
+
+    #navigation__open[aria-expanded='true'],
+    #navigation__open[aria-expanded='false'] {
+      ~ .navigation__content,
+      ~ .navigation__overlay {
+        translate: 0;
+      }
+
+      ~ .navigation__overlay {
+        width: 0;
+      }
+    }
+  }
+}

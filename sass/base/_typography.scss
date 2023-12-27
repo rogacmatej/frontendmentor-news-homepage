@@ -1,0 +1,71 @@
+@use '../abstracts' as *;
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  src: url(/fonts/static/Inter-Regular.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  src: url(/fonts/static/Inter-Bold.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 800;
+  src: url(/fonts/static/Inter-ExtraBold.ttf) format('truetype');
+  font-display: swap;
+}
+
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 400 900;
+    font-stretch: 75 100;
+    src: url(../fonts/Inter-VariableFont_wght.ttf) format('truetype');
+    font-display: swap;
+  }
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--fs-body-lh);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  line-height: var(--fs-xl-lh);
+}
+
+h2 {
+  font-size: var(--fs-lg);
+  line-height: var(--fs-lg-lh);
+}
+
+h3 {
+  font-size: var(--fs-md);
+  line-height: var(--fs-md-lh);
+}
+
+p + p {
+  margin-bottom: 1.5rem;
+}
+
+@include media-breakpoint-down(lg) {
+}

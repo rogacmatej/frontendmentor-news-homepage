@@ -1,0 +1,41 @@
+:root {
+  --clr-primary-soft-orange: 35, 77%, 62%;
+  --clr-primary-soft-red: 5, 85%, 63%;
+
+  --clr-neutral-100: 0, 0%, 100%;
+  --clr-neutral-200: 36, 100%, 99%;
+  --clr-neutral-400: 233, 8%, 79%;
+  --clr-neutral-600: 236, 13%, 42%;
+  --clr-neutral-900: 240, 100%, 5%;
+
+  --ff-body: 'Inter', system-ui, sans-serif;
+  --ff-heading: 'Inter', system-ui, sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  --fs-xl: 5.6rem;
+  --fs-xl-lh: 5.6rem;
+  --fs-lg: 4rem;
+  --fs-lg-lh: 4rem;
+  --fs-md: 3.2rem;
+  --fs-md-lh: 3.2rem;
+  --fs-sm: 2rem;
+  --fs-sm-lh: 2.4rem;
+  --fs-xs: 1.8rem;
+  --fs-xs-lh: 2.4rem;
+  --fs-body: 1.5rem;
+  --fs-body-lh: 2.6rem;
+}
+
+$grid-breakpoints: (
+  xs: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

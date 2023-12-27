@@ -1,0 +1,26 @@
+@use '../abstracts/mixins' as *;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: hsl(var(--clr-neutral-200));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: min(111rem, calc(100% - 3.2rem));
+  margin-inline: auto;
+}
